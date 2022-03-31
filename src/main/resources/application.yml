@@ -1,0 +1,7 @@
+spring:
+    application:
+        name: pocketbook
+    cloud:
+        config:
+            enabled: true
+            uri: http://localhost:8888
