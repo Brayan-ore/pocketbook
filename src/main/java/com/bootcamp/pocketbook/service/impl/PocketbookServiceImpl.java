@@ -5,12 +5,13 @@ import org.springframework.stereotype.Service;
 
 import com.bootcamp.pocketbook.model.dao.Pocketbook;
 import com.bootcamp.pocketbook.repository.PocketbookCrudRepository;
+import com.bootcamp.pocketbook.service.PocketbookService;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
-public class PocketbookServiceImpl {
+public class PocketbookServiceImpl implements PocketbookService{
 	
 	@Autowired
 	private PocketbookCrudRepository repository;
