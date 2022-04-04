@@ -1,5 +1,6 @@
 package com.bootcamp.pocketbook.controller;
 
+import com.bootcamp.pocketbook.resource.PocketBookResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,31 +25,31 @@ import reactor.core.publisher.Mono;
 public class PocketbookController {
 
     @Autowired
-	private PocketbookService service;
+	private PocketBookResource pocketBookResource;
 
 	@GetMapping
     public Flux<Pocketbook> findAll() {
-        return service.findAll();
+        return pocketBookResource.findAll();
     }
 
     @GetMapping("/{id}")
     public Mono<Pocketbook> findById(@PathVariable String id) {
-        return service.findById(id);
+        return pocketBookResource.findById(id);
     }
 
     @PostMapping("/upload")
     public Mono<Pocketbook> save(@RequestBody Pocketbook pocketbook) {
-        return service.save(pocketbook);
+        return pocketBookResource.save(pocketbook);
     }
 
     @PutMapping
     public Mono<Pocketbook> put(@RequestBody Pocketbook pocketbook) {
-        return service.save(pocketbook);
+        return pocketBookResource.save(pocketbook);
     }
 
     @DeleteMapping("/{id}")
     public Mono<Void> delete(@PathVariable String id) {
-        return service.deleteById(id);
+        return pocketBookResource.deleteById(id);
     }
 	
 }

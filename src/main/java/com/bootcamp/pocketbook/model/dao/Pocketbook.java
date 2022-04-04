@@ -11,10 +11,12 @@ public class Pocketbook {
 	@Id
     private String id;
 	
-	private String type_docuemnt;
-	private String cel;
+	private String typeDocument;
+
 	private String imei;
+
 	private String email;
-	private String number_account;
-	
+
+	private String debitCard;
+
 }
