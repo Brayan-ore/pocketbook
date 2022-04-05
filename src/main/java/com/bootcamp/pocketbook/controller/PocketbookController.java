@@ -21,7 +21,6 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/pocketbook")
-@RequiredArgsConstructor
 public class PocketbookController {
 
     @Autowired
@@ -44,7 +43,7 @@ public class PocketbookController {
 
     @PutMapping
     public Mono<Pocketbook> put(@RequestBody Pocketbook pocketbook) {
-        return pocketBookResource.save(pocketbook);
+        return pocketBookResource.update(pocketbook);
     }
 
     @DeleteMapping("/{id}")
