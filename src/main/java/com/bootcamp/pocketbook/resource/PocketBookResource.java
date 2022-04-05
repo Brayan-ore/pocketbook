@@ -28,7 +28,7 @@ public class PocketBookResource {
     }
 
     public Mono<Pocketbook> update(Pocketbook pocketbook) {
-        return pocketbookService.save(pocketbook);
+            return pocketbookService.save(pocketbook);
     }
 
     private Mono<Pocketbook> saveLogic(Pocketbook pocketbook) {
